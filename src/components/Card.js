@@ -30,7 +30,7 @@ function Card (props) {
         spyBackground = 'red'
         break;
       case 'blue':
-        spyBackground = 'blue'
+        spyBackground = '#ADD8E6'
         break;
       case 'innocent':
         spyBackground = 'orange'
@@ -47,7 +47,7 @@ function Card (props) {
   return(
     <div onClick={() => props.handleClick(props.id)} style={{textAlign: 'center', position: 'relative'}}>
       <img alt='' src={defaultImageText} style={{width: '94px'}} />
-        {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '63%', left: '50%', background: spyBackground}}>{props.word}</div>}
+        {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '64%', left: '50%', background: spyBackground}}>{props.word}</div>}
     </div>
   )
 
