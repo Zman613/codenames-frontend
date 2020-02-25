@@ -66,6 +66,14 @@ class App extends Component {
     this.props.history.push('/home')
   }
 
+  deleteRoom = () => {
+    let id = this.state.currentRoom.id
+    fetch(`${API_ROOT}/rooms/${id}`, {
+      method: 'DELETE'
+    })
+    .then(() => this.logout())
+  }
+
   render() {
     console.log('current room: ', this.state.currentRoom)
     console.log('current user: ', this.state.currentUser)
@@ -76,7 +84,7 @@ class App extends Component {
           <Route path="/home" render={(routerProps) => <Home {...routerProps} />} />
           <Route path="/create-room" render={(routerProps) => <CreateRoomForm {...routerProps} setUser={this.setUser} setCurrentRoom={this.setCurrentRoom} />} />
           <Route path="/join-room" render={(routerProps) => <JoinRoomForm {...routerProps} setUser={this.setUser} setCurrentRoom={this.setCurrentRoom} />} />
-          {!!this.state.currentRoom.id && <Route path="/room" render={(routerProps) => <Room {...routerProps} room={this.state.currentRoom} user={this.state.currentUser} setRoom={this.setCurrentRoom} logout={this.logout} />} />}
+          {!!this.state.currentRoom.id && <Route path="/room" render={(routerProps) => <Room {...routerProps} room={this.state.currentRoom} user={this.state.currentUser} setRoom={this.setCurrentRoom} logout={this.logout} deleteRoom={this.deleteRoom} />} />}
         </Switch>
       </div>
     );
