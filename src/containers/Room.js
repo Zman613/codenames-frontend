@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Gameboard from './Gameboard'
 
-function Room() {
+function Room(props) {
 
+  // console.log("room: room", props.room)
+  
+  console.log('hit room', props.user.id)
 
-
-  // console.log()
   return (
     <div>
       HI FROM ROOM
-      <Gameboard />
+      <button onClick={props.logout}>Leave Room</button>
+      <Gameboard room={props.room} user={props.user} history={props.history} setRoom={props.setRoom} />
     </div>
   )
 

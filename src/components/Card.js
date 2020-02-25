@@ -27,13 +27,13 @@ function Card (props) {
   if (!!props.spy){
     switch (props.team) {
       case 'red':
-        spyBackground = 'red'
+        spyBackground = '#ef8362'
         break;
       case 'blue':
         spyBackground = '#ADD8E6'
         break;
       case 'innocent':
-        spyBackground = 'orange'
+        spyBackground = '#FFE4C4'
         break;
       case 'assassin':
         spyBackground = 'gray'
@@ -45,7 +45,7 @@ function Card (props) {
   }
   
   return(
-    <div onClick={() => props.handleClick(props.id)} style={{textAlign: 'center', position: 'relative'}}>
+    <div onClick={() => props.handleClick(props.id, props.clicked)} style={{textAlign: 'center', position: 'relative'}}>
       <img alt='' src={defaultImageText} style={{width: '94px'}} />
         {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '64%', left: '50%', background: spyBackground}}>{props.word}</div>}
     </div>
