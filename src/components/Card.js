@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 function Card (props) {
   
@@ -45,9 +45,9 @@ function Card (props) {
   }
   
   return(
-    <div onClick={() => props.handleClick(props.id, props.clicked)} style={{textAlign: 'center', position: 'relative'}}>
-      <img alt='' src={defaultImageText} style={{width: '94px'}} />
-        {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '64%', left: '50%', background: spyBackground}}>{props.word}</div>}
+    <div  onClick={() => props.handleClick(props.id, props.clicked)} style={{textAlign: 'center', position: 'relative'}}>
+      <img alt='' src={defaultImageText} style={{width: '90px', borderRadius: '5px'}} />
+        {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '65%', left: '50%', background: spyBackground, whiteSpace: 'nowrap', fontSize: '0.8rem'}}>{props.word.toUpperCase()}</div>}
     </div>
   )
 

@@ -48,16 +48,23 @@ function CreateRoomForm (props) {
     }
   }
 
+  let home = () => {
+    props.history.push('/home')
+  }
+
   return (
-    <>
-      <form onSubmit={submitHandler} >
-        <input type='text' value={getUsername} onChange={(e) => setUsername(e.target.value)} placeholder='Username' />
-        <input type='text' value={getRoomName} onChange={(e) => setRoomName(e.target.value)} placeholder='Room Name' />
+    <div>
+      <img onClick={home} className='logo' src='/logo.png' alt='' />
+    <div className='home'>
+      <form className='form' onSubmit={submitHandler} >
+        <input type='text' value={getUsername.trimLeft()} onChange={(e) => setUsername(e.target.value)} placeholder='Username' required />
+        <input type='text' value={getRoomName.trimLeft()} onChange={(e) => setRoomName(e.target.value)} placeholder='Room Name' required />
         <input type='password' value={getPassword} onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
         <input type='password' value={getPasswordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder='Confirm Password' />
-        <input type='submit' value='Create Room' />
+        <input id='submit' type='submit' value='Create Room' />
       </form>
-    </>
+    </div>
+    </div>
   )
 }
 

@@ -9,12 +9,20 @@ function Home (props) {
   let createHandle = () => {
     props.history.push("/create-room")
   }
+
+  let home = () => {
+    props.history.push('/home')
+  }
+  
   console.log("hit home")
   return(
-    <>
-      <button onClick={joinHandle}>Join Room</button>
-      <button onClick={createHandle}>Create Room</button>
-    </>
+    <div>
+      <img onClick={home} className='logo' src='/logo.png' alt='' />
+    <div className='home'>
+      <button className='home-button' id='join-button' onClick={joinHandle}>Join Room</button>
+      <button className='home-button' id='create-button' onClick={createHandle}>Create Room</button>
+    </div>
+    </div>
   )
 }
 

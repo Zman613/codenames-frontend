@@ -42,15 +42,22 @@ function JoinRoomForm (props) {
     })
   }
 
+  let home = () => {
+    props.history.push('/home')
+  }
+
   return (
-    <>
-      <form onSubmit={submitHandler} >
-        <input type='text' value={getUsername} onChange={(e) => setUsername(e.target.value)} placeholder='Username' />
-        <input type='text' value={getRoomName} onChange={(e) => setRoomName(e.target.value)} placeholder='Room Name' />
+    <div>
+      <img onClick={home} className='logo' src='/logo.png' alt='' />
+    <div className='home'>
+      <form className='form' onSubmit={submitHandler} >
+        <input type='text' value={getUsername.trimLeft()} onChange={(e) => setUsername(e.target.value)} placeholder='Username' required />
+        <input type='text' value={getRoomName.trimLeft()} onChange={(e) => setRoomName(e.target.value)} placeholder='Room Name' />
         <input type='password' value={getPassword} onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
-        <input type='submit' value='Join Room' />
+        <input id='submit' type='submit' value='Join Room' />
       </form>
-    </>
+    </div>
+    </div>
   )
 }
 

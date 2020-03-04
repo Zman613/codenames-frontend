@@ -1,11 +1,11 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import Room from './containers/Room.js'
 import Home from './containers/Home.js'
 import CreateRoomForm from './components/CreateRoomForm.js';
 import JoinRoomForm from './components/JoinRoomForm.js';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import { API_ROOT, HEADERS } from './constants';
+import { API_ROOT } from './constants';
 
 
 
@@ -84,7 +84,7 @@ class App extends Component {
           <Route path="/home" render={(routerProps) => <Home {...routerProps} />} />
           <Route path="/create-room" render={(routerProps) => <CreateRoomForm {...routerProps} setUser={this.setUser} setCurrentRoom={this.setCurrentRoom} />} />
           <Route path="/join-room" render={(routerProps) => <JoinRoomForm {...routerProps} setUser={this.setUser} setCurrentRoom={this.setCurrentRoom} />} />
-          {!!this.state.currentRoom.id && <Route path="/room" render={(routerProps) => <Room {...routerProps} room={this.state.currentRoom} user={this.state.currentUser} setRoom={this.setCurrentRoom} logout={this.logout} deleteRoom={this.deleteRoom} />} />}
+          {!!this.state.currentRoom.id && <Route path="/room" render={(routerProps) => <Room {...routerProps} room={this.state.currentRoom} user={this.state.currentUser} setUser={this.setUser} setRoom={this.setCurrentRoom} logout={this.logout} deleteRoom={this.deleteRoom} />} />}
         </Switch>
       </div>
     );
