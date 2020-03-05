@@ -8,16 +8,16 @@ function Card (props) {
   if (!!props.clicked){
     switch (props.team) {
       case 'red':
-        defaultImageText = '/RedAgent.png'
+        defaultImageText = '/RedAgent02.png'
         break;
       case 'blue':
-        defaultImageText = '/BlueAgent.png'
+        defaultImageText = '/BlueAgent01.png'
         break;
       case 'innocent':
-        defaultImageText = '/Innocent.png'
+        defaultImageText = '/Innocent01.png'
         break;
       case 'assassin':
-        defaultImageText = '/Assassin.png'
+        defaultImageText = '/spy.jpg'
         break;
       default:
         defaultImageText = '/0001.jpg'
@@ -46,8 +46,9 @@ function Card (props) {
   
   return(
     <div  onClick={() => props.handleClick(props.id, props.clicked)} style={{textAlign: 'center', position: 'relative'}}>
-      <img alt='' src={defaultImageText} style={{width: '90px', borderRadius: '5px'}} />
-        {!props.clicked && <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '65%', left: '50%', background: spyBackground, whiteSpace: 'nowrap', fontSize: '0.8rem'}}>{props.word.toUpperCase()}</div>}
+      {props.clicked && <img className='cover' alt='' src={defaultImageText} style={{width: '86px', borderRadius: '5px', zIndex: '5', position: 'absolute'}} />}
+      <img alt='' src={'/0001.jpg'} style={{width: '86px', borderRadius: '5px'}} />
+        <div style={{transform: 'translate(-50%, -50%)', position: 'absolute', top: '65%', left: '50%', background: spyBackground, whiteSpace: 'nowrap', fontSize: '0.8rem'}}>{props.word.toUpperCase()}</div>
     </div>
   )
 

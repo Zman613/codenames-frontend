@@ -152,12 +152,15 @@ code {
 .leave-room {
   grid-area: row-one / two / row-two / three;
   align-self: end;
+  margin-bottom: 3px;
+}
+
+.leave-room span {
   white-space: nowrap;
   background-color: lightgoldenrodyellow;
   border-radius: 4px;
-  padding: 3px;
+  padding: 3px 5px;
   font-family: gotham;
-  margin-bottom: 3px;
 }
 
 .blue-team {
@@ -168,6 +171,14 @@ code {
 
 .blue-team button {
   font-size: 1.1rem;
+  white-space: nowrap;
+  /* background-color: #ADD8E6;
+  border-radius: 4px;
+  padding: 4px 5px; */
+}
+
+.blue-team div {
+  padding-top: 3px;
 }
 
 .red-team {
@@ -178,6 +189,14 @@ code {
 
 .red-team button {
   font-size: 1.1rem;
+  white-space: nowrap;
+  /* background-color: #ef8362;
+  border-radius: 4px;
+  padding: 4px 5px; */
+}
+
+.red-team div {
+  padding-top: 3px;
 }
 
 .gameboard {
@@ -186,8 +205,9 @@ code {
   /* justify-items: start; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
+  justify-content: center;
 }
 
 .spymaster {
@@ -325,7 +345,7 @@ code {
   /* align-items: center; */
 }
 
-.how-to, .settings {
+.how-to, .settings, .about {
   border: 1px solid #ccc;
   background-color: rgb(240, 255, 240, 0.8);
   width: 70vw;
@@ -357,4 +377,45 @@ code {
   margin: auto;
   background-color: gray;
   border-radius: 4px;
+}
+
+.about button {
+  position: relative;
+  bottom: 5px;
+  background-color: gray;
+  border-radius: 4px;
+}
+
+.cover {
+  transition: all 0.8s;
+}
+
+.cover:active {
+  transform: translate(25px, -60px) rotate(9deg);
+  transform-origin: 50% 50%;
+  position: relative;
+}
+@media all and (orientation:portrait) {
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
+  }
+  .home {
+    height: 100vw;
+    width: 100vh;
+  }
+  .room {
+    height: 100vw;
+    width: 100vh;
+  }
+  .modal {
+    height: 100vw;
+    width: 100vh;
+  }
+  .how-to p {
+    padding: 1vw 7vh;
+  }
+  .how-to, .settings {
+    width: 70vh;
+  }
 }

@@ -17,7 +17,7 @@ function Menu (props) {
       <div className='menu-items' ref={ref} >
         <button onClick={() => {props.setHowTo(true); setMenu(false)}}> How To Play </button>
         <button onClick={() => {props.setSettings(true); setMenu(false)}}> Settings </button>
-        <button> About </button>
+        <button onClick={() => {props.setAbout(true); setMenu(false)}}> About </button>
       </div>
       }
     </div>
