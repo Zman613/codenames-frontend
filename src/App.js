@@ -30,8 +30,8 @@ class App extends Component {
   componentDidMount() {
     const token = localStorage.token
     const userToken = localStorage.user
-    console.log("token", token)
-    console.log("user token", userToken)
+    // console.log("token", token)
+    // console.log("user token", userToken)
     if (!!token && !!userToken) {
       fetch(`${API_ROOT}/auto-login`, {
         headers: {
@@ -44,7 +44,7 @@ class App extends Component {
           if (response.errors) {
             alert(response.errors)
           } else {
-            console.log('response get:', response)
+            // console.log('response get:', response)
             this.setState({
               currentRoom: response.room.room,
               currentUser: response.user
@@ -75,8 +75,8 @@ class App extends Component {
   }
 
   render() {
-    console.log('current room: ', this.state.currentRoom)
-    console.log('current user: ', this.state.currentUser)
+    // console.log('current room: ', this.state.currentRoom)
+    // console.log('current user: ', this.state.currentUser)
 
     return (
       <div className="App">

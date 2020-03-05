@@ -377,6 +377,19 @@ code {
   margin: auto;
   background-color: gray;
   border-radius: 4px;
+  /* padding-top: 40px; */
+}
+
+.settings {
+  margin: 13rem 0;
+  width: 50vw;
+  padding-top: 70px;
+}
+
+.about {
+  margin: 13rem 0;
+  width: 50vw;
+  padding-top: 20px;
 }
 
 .about button {

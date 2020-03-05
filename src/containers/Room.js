@@ -14,8 +14,8 @@ function Room (props) {
   const [getHowTo, setHowTo] = useState(false)
   const [getSettings, setSettings] = useState(false)
   const [getAbout, setAbout] = useState(false)
-  console.log('hit room', props.user.id)
-  console.log('how to: ', getHowTo)
+  // console.log('hit room', props.user.id)
+  // console.log('how to: ', getHowTo)
   return (
     <div className='room'>
       <Menu setHowTo={setHowTo} setSettings={setSettings} setAbout={setAbout} />

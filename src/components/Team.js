@@ -34,7 +34,7 @@ function Team (props) {
     }
   }, [getUsers])
 
-  console.log('team users: ', getUsers)
+  // console.log('team users: ', getUsers)
   return (
     <div style={{display: 'contents'}}>
       <ActionCableConsumer channel={{channel: 'UsersChannel', id: props.room.id}} onReceived={handleReceivedUsers} onDisconnected={() => console.log("Disconected😱")} />

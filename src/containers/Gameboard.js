@@ -18,7 +18,7 @@ function Gameboard (props) {
   
   useEffect(() => {
     !!props.room.id && props.setRoom({...props.room, cards: sortCards(props.room.cards)})
-    console.log("use effect gb: ")
+    // console.log("use effect gb: ")
   }, [props.room.id])
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function Gameboard (props) {
     return array.sort((a, b) => a.id - b.id)
   } 
 
-  console.log(props.room)
+  // console.log(props.room)
   return(
     <div className='gameboard'>
       <ActionCableConsumer channel={{channel: 'RoomsChannel', id: props.room.id}} onReceived={handleReceivedRoom} onDisconnected={() => console.log("Disconected😱")} />
