@@ -8,4 +8,4 @@ The teams compete to see who can make contact with all of their agents first. Sp
 Codenames: win or lose, it’s fun to figure out the clues.
 
 ### Configuration
-If you are playing on one computer and using localhost no configuration needed. If you want to open up your computer as a server (using Ngrok for example). Then you need to go to ./src/constants/index.js and change API_ROOT to the http of the host address and API_WS_ROOT to the ws of the host address (ws:// HOST_ADDRESS /cable).
+If you are playing on one computer and using localhost no configuration needed. If you want to open up your computer as a server (using Ngrok for example). Then you need to go to ./src/constants/index.js and change API_ROOT to the http of the host address and API_WS_ROOT to the ws of the host address (ws://*HOST_ADDRESS*/cable).
